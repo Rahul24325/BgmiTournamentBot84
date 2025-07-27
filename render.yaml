@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: bgmi-tournament-bot
+    env: python
+    region: oregon
+    plan: starter
+    buildCommand: pip install python-telegram-bot motor pymongo aiohttp python-dotenv
+    startCommand: python main.py
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://rahul7241146384:rahul7241146384@cluster0.qeaogc4.mongodb.net/
+      - key: AI_API_KEY
+        value: d96a2478-7fde-4d76-a28d-b8172e561077
+      - key: ENVIRONMENT
+        value: production
+      - key: PORT
+        value: 5000
